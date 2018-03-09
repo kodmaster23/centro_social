@@ -15,8 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+
+from casadopia.api import EnderecoViewSet, InstituicaoExternaViewSet, FamiliaViewSet, HabitacaoViewSet, FamiliarViewSet, \
+    AtendidoViewSet, GrauParentescoViewSet, EscolaridadeViewSet, HistoricoSaudeViewSet
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'enderecos', EnderecoViewSet)
+router.register(r'instituicoes_externas', InstituicaoExternaViewSet)
+router.register(r'familias', FamiliaViewSet)
+router.register(r'habitacoes', HabitacaoViewSet)
+router.register(r'familiares', FamiliarViewSet)
+router.register(r'atendidos', AtendidoViewSet)
+router.register(r'graus_parentesco', GrauParentescoViewSet)
+router.register(r'escolaridades', EscolaridadeViewSet)
+router.register(r'historicos_saude', HistoricoSaudeViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^casadopia/', include('casadopia.urls')),
+    url(r'^casadopia/', include(router.urls)),
 ]
