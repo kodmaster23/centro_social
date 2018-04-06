@@ -7,7 +7,7 @@ from casadopia.serializers import EnderecoSerializer, InstituicaoExternaSerializ
     HistoricoSaudeSerializer
 
 class MyPagination(pagination.PageNumberPagination):
-    page_size = 1
+    page_size = 10
     page_size_query_description = 'page_size'
     max_page_size = 30
 

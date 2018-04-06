@@ -23,7 +23,7 @@ class Endereco(models.Model):
         verbose_name_plural = 'Endereços'
 
     def __unicode__(self):
-        return self.name
+        return self.logradouro
 
 class InstituicaoExterna(models.Model):
 
@@ -43,7 +43,7 @@ class InstituicaoExterna(models.Model):
         verbose_name_plural = 'Instituições Externas'
 
     def __unicode__(self):
-        return self.name
+        return self.nome
 
 
 class Familia(models.Model):
@@ -66,7 +66,7 @@ class Familia(models.Model):
         verbose_name_plural = 'Famílias'
 
     def __unicode__(self):
-        return self.name
+        return str(self.nis_familiar)
 
 
 class Habitacao(models.Model):
@@ -122,7 +122,7 @@ class Habitacao(models.Model):
         verbose_name_plural = 'Habitações'
 
     def __unicode__(self):
-        return self.name
+        return self.tipo_domicilio
 
 
 class Familiar(models.Model):
@@ -183,7 +183,7 @@ class Familiar(models.Model):
         verbose_name_plural = 'Familiares'
 
     def __unicode__(self):
-        return self.name
+        return self.nome
 
 
 class Atendido(models.Model):
@@ -228,7 +228,7 @@ class Atendido(models.Model):
         verbose_name_plural = 'Atendidos'
 
     def __unicode__(self):
-        return self.name
+        return self.nome
 
 
 
@@ -265,7 +265,7 @@ class GrauParentesco(models.Model):
         verbose_name_plural = 'Graus de Paretesco'
 
     def __unicode__(self):
-        return self.name
+        return (self.grau)
 
 
 class Escolaridade(models.Model):
@@ -314,7 +314,7 @@ class Escolaridade(models.Model):
         verbose_name_plural = 'Escolaridade'
 
     def __unicode__(self):
-        return self.name
+        return str(self.ano)
 
 
 class HistoricoSaude(models.Model):
@@ -339,4 +339,4 @@ class HistoricoSaude(models.Model):
         verbose_name_plural = 'Histórico de Saúde'
 
     def __unicode__(self):
-        return self.name
+        return str(self.tipo)
